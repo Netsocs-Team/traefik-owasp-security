@@ -1,4 +1,4 @@
-package traefik_owasp_security_headers
+package traefik_owasp_security
 
 import (
 	"context"
@@ -36,7 +36,9 @@ type Config struct {
 // CreateConfig creates the default plugin configuration.
 func CreateConfig() *Config {
 	return &Config{
-		// ...
+		DisableCookieHTTPOnly: false,
+		DisableCookieSecure:   false,
+		DisableCookieSameSite: false,
 	}
 }
 

@@ -1,4 +1,4 @@
-package traefik_owasp_security_headers_test
+package traefik_owasp_security_test
 
 import (
 	"net/http"
