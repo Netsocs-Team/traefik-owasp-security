@@ -1,6 +1,7 @@
 displayName: Traefik OWASP Security Headers
 type: middleware
 iconPath: img/icon.jpg
+bannerPath: img/banner.png
 
 import: github.com/Netsocs-Team/traefik-owasp-security
 
