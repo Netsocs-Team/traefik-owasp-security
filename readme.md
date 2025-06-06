@@ -1,6 +1,13 @@
 # Traefik OWASP Security Headers Plugin
 
+![](./img/icon_500x500.jpg)
+
 A Traefik middleware plugin that automatically adds a comprehensive set of [OWASP-recommended](https://owasp.org/www-project-secure-headers/) security headers to HTTP responses and enforces secure cookie attributes.
+
+> [!NOTE]
+> This repository is not officially endorsed or maintained by OWASP. It is a community-driven project that aims to implement security headers based on OWASP's recommendations and best practices. While we strive to follow OWASP guidelines, always verify the configurations for your specific use case.
+>
+> For official OWASP resources, please visit: https://owasp.org.
 
 ## Features
 
