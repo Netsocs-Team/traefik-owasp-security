@@ -1,6 +1,6 @@
 # Traefik OWASP Security Headers Plugin
 
-![](./img/icon_500x500.jpg)
+![](./img/icon.jpg)
 
 A Traefik middleware plugin that automatically adds a comprehensive set of [OWASP-recommended](https://owasp.org/www-project-secure-headers/) security headers to HTTP responses and enforces secure cookie attributes.
 
