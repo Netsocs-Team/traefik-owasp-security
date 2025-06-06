@@ -1,0 +1,12 @@
+displayName: Traefik OWASP Security Headers
+type: middleware
+iconPath: img/icon.jpg
+
+import: github.com/Netsocs-Team/traefik-owasp-security
+
+summary: Traefik middleware plugin that adds OWASP-recommended security headers and enforces secure cookie attributes on HTTP responses.
+
+testData:
+  disableCookieHTTPOnly: false
+  disableCookieSecure: false
+  disableCookieSameSite: false
