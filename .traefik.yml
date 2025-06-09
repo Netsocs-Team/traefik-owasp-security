@@ -11,3 +11,4 @@ testData:
   disableCookieHTTPOnly: false
   disableCookieSecure: false
   disableCookieSameSite: false
+  skipCookieSecurity: false

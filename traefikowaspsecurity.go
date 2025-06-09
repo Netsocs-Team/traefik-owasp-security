@@ -31,6 +31,7 @@ type Config struct {
 	DisableCookieHTTPOnly bool `json:"disableCookieHTTPOnly,omitempty"`
 	DisableCookieSecure   bool `json:"disableCookieSecure,omitempty"`
 	DisableCookieSameSite bool `json:"disableCookieSameSite,omitempty"`
+	SkipCookieSecurity    bool `json:"skipCookieSecurity,omitempty"`
 }
 
 // CreateConfig creates the default plugin configuration.
@@ -39,6 +40,7 @@ func CreateConfig() *Config {
 		DisableCookieHTTPOnly: false,
 		DisableCookieSecure:   false,
 		DisableCookieSameSite: false,
+		SkipCookieSecurity:    false,
 	}
 }
 
@@ -72,12 +74,12 @@ func (e *TraefikOwaspSecurityHeaders) ServeHTTP(rw http.ResponseWriter, req *htt
 
 	// check if Set-Cookie exists and apply HTTPOnly, Secure, and SameSite attributes if configured.
 	// No replace the cookie, only add attributes if they are not already set.
-	// cookies := rw.Header().Get("Set-Cookie")
+	cookies := rw.Header().Get("Set-Cookie")
 
-	// if cookies != "" {
-	// 	cookies = e.applyCookieSecurity(cookies)
-	// 	rw.Header().Set("Set-Cookie", cookies)
-	// }
+	if cookies != "" && !e.config.SkipCookieSecurity {
+		cookies = e.applyCookieSecurity(cookies)
+		rw.Header().Set("Set-Cookie", cookies)
+	}
 
 	e.next.ServeHTTP(rw, req)
 }

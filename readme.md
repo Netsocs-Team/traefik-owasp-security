@@ -56,6 +56,7 @@ http:
                     disableCookieHTTPOnly: false
                     disableCookieSecure: false
                     disableCookieSameSite: false
+                    skipCookieSecurity: false
 ```
 
 3. Attach the middleware to your routers as needed.
