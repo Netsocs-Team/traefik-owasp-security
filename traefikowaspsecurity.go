@@ -7,24 +7,26 @@ import (
 )
 
 var HeaderList = map[string]string{
-	"Strict-Transport-Security":           "max-age=63072000; includeSubDomains; preload",
-	"X-Content-Type-Options":              "nosniff",
-	"X-Frame-Options":                     "SAMEORIGIN",
-	"X-XSS-Protection":                    "1; mode=block",
-	"Referrer-Policy":                     "no-referrer-when-downgrade",
-	"Content-Security-Policy":             "default-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self';",
-	"Permissions-Policy":                  "geolocation=(), microphone=(), camera=()",
-	"X-Permitted-Cross-Domain-Policies":   "none",
-	"Cross-Origin-Opener-Policy":          "same-origin",
-	"Cross-Origin-Resource-Policy":        "same-origin",
-	"Cross-Origin-Embedder-Policy":        "require-corp",
-	"Cache-Control":                       "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
-	"Server":                              "", // Empty to hide server information
-	"X-Powered-By":                        "", // Empty to hide powered by information
-	"Pragma":                              "no-cache",
-	"Content-Security-Policy-Report-Only": "default-src 'self'; script-src 'self'; style-src 'self'; form-action 'self'; report-uri /csp-report-endpoint",
-	"Expect-CT":                           "max-age=31536000, enforce",
-	"Feature-Policy":                      "geolocation 'none'; microphone 'none'; camera 'none'",
+	// https://owasp.org/www-project-secure-headers/#strict-transport-security
+	"Strict-Transport-Security": "max-age=31536000 ; includeSubDomains ; preload",
+	// https://owasp.org/www-project-secure-headers/#x-frame-options
+	"X-Frame-Options": "sameorigin",
+	// https://owasp.org/www-project-secure-headers/#x-content-type-options
+	"X-Content-Type-Options": "nosniff",
+	// https://owasp.org/www-project-secure-headers/#content-security-policy
+	"Content-Security-Policy": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self';",
+	// https://owasp.org/www-project-secure-headers/#x-permitted-cross-domain-policies
+	"X-Permitted-Cross-Domain-Policies": "none",
+	// https://owasp.org/www-project-secure-headers/#cross-origin-opener-policy
+	"Cross-Origin-Opener-Policy": "same-origin",
+	// https://owasp.org/www-project-secure-headers/#cross-origin-resource-policy
+	"Cross-Origin-Resource-Policy": "same-origin",
+	// https://owasp.org/www-project-secure-headers/#cache-control
+	"Cache-Control":                "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
+	"Referrer-Policy":              "no-referrer-when-downgrade",
+	"Cross-Origin-Embedder-Policy": "require-corp",
+	"Server":                       "", // Empty to hide server information
+	"X-Powered-By":                 "", // Empty to hide powered by information
 }
 
 type Config struct {
