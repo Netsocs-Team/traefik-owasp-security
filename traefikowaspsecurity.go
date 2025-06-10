@@ -14,7 +14,7 @@ var HeaderList = map[string]string{
 	// https://owasp.org/www-project-secure-headers/#x-content-type-options
 	"X-Content-Type-Options": "nosniff",
 	// https://owasp.org/www-project-secure-headers/#content-security-policy
-	"Content-Security-Policy": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self';",
+	"Content-Security-Policy": "script-src 'self'",
 	// https://owasp.org/www-project-secure-headers/#x-permitted-cross-domain-policies
 	"X-Permitted-Cross-Domain-Policies": "none",
 	// https://owasp.org/www-project-secure-headers/#cross-origin-opener-policy
