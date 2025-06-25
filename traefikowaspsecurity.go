@@ -20,7 +20,7 @@ var HeaderList = map[string]string{
 	// https://owasp.org/www-project-secure-headers/#cross-origin-opener-policy
 	"Cross-Origin-Opener-Policy": "same-origin",
 	// https://owasp.org/www-project-secure-headers/#cross-origin-resource-policy
-	"Cross-Origin-Resource-Policy": "same-origin",
+	"Cross-Origin-Resource-Policy": "cross-origin",
 	// https://owasp.org/www-project-secure-headers/#cache-control
 	"Cache-Control":                "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
 	"Referrer-Policy":              "no-referrer-when-downgrade",
