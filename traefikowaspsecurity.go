@@ -14,7 +14,7 @@ var HeaderList = map[string]string{
 	// https://owasp.org/www-project-secure-headers/#x-content-type-options
 	"X-Content-Type-Options": "nosniff",
 	// https://owasp.org/www-project-secure-headers/#content-security-policy
-	"Content-Security-Policy": "script-src 'self'",
+	"Content-Security-Policy": "script-src 'self' 'unsafe-eval' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com https://unpkg.com https://www.openstreetmap.org; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://www.openstreetmap.org; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; img-src 'self' data: https://www.google-analytics.com https://tile.openstreetmap.org https://a.tile.openstreetmap.org https://b.tile.openstreetmap.org https://c.tile.openstreetmap.org https://www.openstreetmap.org; worker-src 'self' blob: https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;",
 	// https://owasp.org/www-project-secure-headers/#x-permitted-cross-domain-policies
 	"X-Permitted-Cross-Domain-Policies": "none",
 	// https://owasp.org/www-project-secure-headers/#cross-origin-opener-policy
@@ -24,7 +24,7 @@ var HeaderList = map[string]string{
 	// https://owasp.org/www-project-secure-headers/#cache-control
 	"Cache-Control":                "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
 	"Referrer-Policy":              "no-referrer-when-downgrade",
-	"Cross-Origin-Embedder-Policy": "require-corp",
+	"Cross-Origin-Embedder-Policy": "", // Lo desactivamos para evitar problemas con recursos externos
 	"Server":                       "", // Empty to hide server information
 	"X-Powered-By":                 "", // Empty to hide powered by information
 }
